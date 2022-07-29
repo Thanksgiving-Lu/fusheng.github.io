@@ -311,7 +311,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    271
+                    275
                 </div>
                 
 
@@ -388,7 +388,8 @@
         tmp_table <span class="token operator">=</span> cursor<span class="token punctuation">.</span>fetchall<span class="token punctuation">(</span><span class="token punctuation">)</span>
         p <span class="token operator">=</span> markdown_table_header <span class="token operator">%</span> table
         <span class="token keyword">for</span> col <span class="token keyword">in</span> tmp_table<span class="token punctuation">:</span>
-            p <span class="token operator">+=</span> markdown_table_row <span class="token operator">%</span> col <span class="token operator">+</span> <span class="token string">'\n'</span>
+            p <span class="token operator">+=</span> <span class="token punctuation">(</span>markdown_table_row <span class="token operator">%</span>
+                  col<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\r'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'\n'</span>
         f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
         f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
 
@@ -398,7 +399,7 @@
 
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     generate<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后md文档效果:<br><img src="https://fusheng-cloud.oss-cn-hangzhou.aliyuncs.com/blog/exportDemo.jpg" alt="导出结果截图"></p>
 
@@ -859,7 +860,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">271</span>
+                        class="white-color">275</span>
             
             
             
