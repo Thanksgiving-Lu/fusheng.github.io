@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>pyhon3导出mySql数据库字典</title>
+      <title>pyhon3导出MySql数据库字典</title>
       <link href="/2022/07/29/exportMysqlDictionary/"/>
       <url>/2022/07/29/exportMysqlDictionary/</url>
       
@@ -13,14 +13,14 @@
       
       <categories>
           
-          <category> mySql </category>
+          <category> MySql </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> mySql </tag>
+            <tag> MySql </tag>
             
             <tag> python </tag>
             
