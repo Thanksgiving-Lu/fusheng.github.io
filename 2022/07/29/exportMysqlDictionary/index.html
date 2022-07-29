@@ -311,7 +311,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    161
+                    159
                 </div>
                 
 
@@ -355,16 +355,15 @@
     <span class="token comment"># 使用前修改配置</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'start'</span><span class="token punctuation">)</span>
     conn <span class="token operator">=</span> pymysql<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>
-        host<span class="token operator">=</span><span class="token string">'172.16.1.99'</span><span class="token punctuation">,</span>
+        host<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span>
         port<span class="token operator">=</span><span class="token number">3306</span><span class="token punctuation">,</span>
-        user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">,</span>
-        password<span class="token operator">=</span><span class="token string">'Dabakeji123'</span>
+        user<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span>
+        password<span class="token operator">=</span><span class="token string">''</span>
     <span class="token punctuation">)</span>
 
     cursor <span class="token operator">=</span> conn<span class="token punctuation">.</span>cursor<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    database_name <span class="token operator">=</span> <span class="token string">'newdb_cloud'</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'name:'</span><span class="token operator">+</span>database_name<span class="token punctuation">)</span>
+<span class="token comment"># 使用前修改数据库名称</span>
+    database_name <span class="token operator">=</span> <span class="token string">''</span>
 
     cursor<span class="token punctuation">.</span>execute<span class="token punctuation">(</span>
         <span class="token string">"SELECT TABLE_NAME, TABLE_COMMENT FROM information_schema.TABLES WHERE table_type='BASE TABLE' AND TABLE_SCHEMA='%s'"</span> <span class="token operator">%</span> database_name
@@ -389,7 +388,6 @@
         p <span class="token operator">=</span> markdown_table_header <span class="token operator">%</span> table
         <span class="token keyword">for</span> col <span class="token keyword">in</span> tmp_table<span class="token punctuation">:</span>
             p <span class="token operator">+=</span> markdown_table_row <span class="token operator">%</span> col <span class="token operator">+</span> <span class="token string">'\n'</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>
         f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
         f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
 
@@ -399,7 +397,7 @@
 
 <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
     generate<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -841,7 +839,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">234</span>
+                        class="white-color">232</span>
             
             
             
