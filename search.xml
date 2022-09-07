@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>linux常用命令汇总</title>
+      <link href="/2022/09/07/linuxCmd/"/>
+      <url>/2022/09/07/linuxCmd/</url>
+      
+        <content type="html"><![CDATA[<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><p>cd，ls、ll、ln、pwd、rm、mv、cp、scp、df、du、mkdir、grep、ifconfig、ip a、tail、cat、more、chmod、chown、ps、top、netstat、sz、rz、kill、killall、unzip、tar、history、ntpdate、date、exit、reboot</p><p>cd ..&#x2F;&#x2F;&#x2F;跳转到上一级目录<br>cd -&#x2F;&#x2F;跳转到上一次目录<br>cd &#x2F;data&#x2F;&#x2F;跳转绝对目录&#x2F;data<br>cd logs&#x2F;&#x2F;跳转到当前目录的相对目录logs<br>ls -l &#x2F;&#x2F;显示详细信息<br>ls -a &#x2F;&#x2F;显示全部文件（包括隐藏文件）<br>ll -ht &#x2F;&#x2F;按时间排序<br>ln -s &#x2F;root&#x2F;a.txt &#x2F;home&#x2F;root-a.txt   &#x2F;&#x2F;ln -s 真实目录或文件 软链接<br>mkdir &#x2F;root&#x2F;patha<br>mkdir &#x2F;root&#x2F;path&#x2F;a&#x2F;b&#x2F;c -p &#x2F;&#x2F;-p表示多级目录不存在是强制创建<br>ln -s &#x2F;root&#x2F;patha &#x2F;home&#x2F;root-patha &#x2F;&#x2F;创建&#x2F;home&#x2F;root-patha软连接到&#x2F;root&#x2F;patha<br>rm &#x2F;home&#x2F;root-patha -fr&#x2F;&#x2F;不会删除真实目录<br>rm &#x2F;home&#x2F;root-patha&#x2F; -fr   &#x2F;&#x2F;会删除真实目录<br>scp -r &#x2F;root&#x2F;patha <a href="mailto:&#x72;&#111;&#x6f;&#116;&#x40;&#x31;&#x39;&#50;&#46;&#x31;&#54;&#56;&#46;&#50;&#46;&#56;&#x36;">&#x72;&#111;&#x6f;&#116;&#x40;&#x31;&#x39;&#50;&#46;&#x31;&#54;&#56;&#46;&#50;&#46;&#56;&#x36;</a>:&#x2F;root &#x2F;&#x2F;scp拷贝文件到86服务器&#x2F;root目录下，使用密码登录<br>scp -i &#x2F;root&#x2F;.ssh&#x2F;tbj0806 -r &#x2F;root&#x2F;patha <a href="mailto:&#114;&#x6f;&#111;&#x74;&#x40;&#x31;&#x39;&#x32;&#46;&#x31;&#54;&#x38;&#46;&#50;&#46;&#x38;&#x36;">&#114;&#x6f;&#111;&#x74;&#x40;&#x31;&#x39;&#x32;&#46;&#x31;&#54;&#x38;&#46;&#50;&#46;&#x38;&#x36;</a>:&#x2F;root &#x2F;&#x2F;scp拷贝文件到86服务器&#x2F;root目录下，使用密钥登录<br>df -h &#x2F;&#x2F;查看整个服务器的硬盘容量使用情况<br>du -sh &#x2F;&#x2F;查看当前目录硬盘占用情况<br>grep 13588 &#x2F;data&#x2F;logs&#x2F;eslapi.log            &#x2F;&#x2F;整个文件查找13588<br>tail -5000 &#x2F;data&#x2F;logs&#x2F;eslapi.log|grep 13588 &#x2F;&#x2F;文件最后5000行查找13588<br>grep 13588 &#x2F;data&#x2F;logs&#x2F;eslapi.log|more&#x2F;&#x2F;整个文件查找13588后，输出结果第1页，按回车或者空格键下一页<br>ifconfig  &#x2F;&#x2F;查看ip信息<br>ip a &#x2F;&#x2F;查看ip信息(centos7以上才支持)<br>chmod +x 01_system_install.sh &#x2F;&#x2F;给01_system_install.sh文件添加执行权限<br>chown -R root:root &#x2F;root&#x2F;patha &#x2F;&#x2F;修改&#x2F;root&#x2F;patha目录的归属组和用户，-R表示子目录也一并修改<br>ps -ef &#x2F;&#x2F;查看进程基本信息，ps -aux查看的是进程信息的详细属性<br>top&#x2F;&#x2F;查看系统信息（内存、cpu等）,按c查看具体进程名称，按m看内存相关信息，按1查看具体的cpu核信息<br>netstat -nap&#x2F;&#x2F;查看系统端口绑定情况，可以结合grep查看对应程序或者端口的绑定情况，eg. netstat -nap|grep 3306  或netstat -nap|grep mysqld<br>rz;sz&#x2F;&#x2F;上传下载<br>kill和killall&#x2F;&#x2F;kill -9 进程号，killall 进程名，eg.kill -9 56060或killall cti<br>uzip和tar&#x2F;&#x2F;打包压缩：tar -zcvf a.tgz a&#x2F;;解压：tar -zxvf a.tgz<br>history&#x2F;&#x2F;历史的shell命令操作记录<br>reboot&#x2F;&#x2F;重启服务器，请勿操作！！！</p><h2 id="中级命令"><a href="#中级命令" class="headerlink" title="中级命令"></a>中级命令</h2><p>vi、ssh、sh、tcpdump、firewall-cmd、systemctl、service、yum、pip、free、curl、wget、nc、ulimit、whereis、find、awk、sed、sort</p><p>vi &#x2F;&#x2F;esc后shift+:wq，dd删除一行，u还原取消这次操作，i编辑状态等<br>tcpdump port 5060 -i any -As 0 -nn &gt;5060.log    &#x2F;&#x2F;抓包<br>tcpdump portrange 5060-5066 -i any -As 0 -nn &gt;5060.log<br>tcpdump portrange 30000-33999 -i any -nn<br>firewall-cmd&#x2F;&#x2F;防火墙配置操作<br>curl、wget &#x2F;&#x2F;模拟post请求和下载文件<br>nc &#x2F;&#x2F;模拟tcp，udp等网络客户端<br>find &#x2F;&#x2F;文件查找<br>awk，sed，sort &#x2F;&#x2F;字符串操作界的瑞士军刀，切割，统计和排序<br>tail -f &#x2F;data&#x2F;logs&#x2F;eslapi.log|awk -F “,” ‘{print $1,$2}’<br>pip search esl &#x2F;&#x2F;查找esl相关的python库<br>pip install xxx &#x2F;&#x2F;根据查找到的库名称安装相关的python库</p><h2 id="高级命令"><a href="#高级命令" class="headerlink" title="高级命令"></a>高级命令</h2><p>redis-cli、mysql、mysqldump 、docker、supervisorctl、java<br>docker start freeswitch<br>docker stop freeswitch<br>mysql -uroot -pifind@****<br>mysqldump -uroot -pifind@**** –opt –add-drop-table –add-drop-database -d -B db_name &gt;db_name.nodata.sql   &#x2F;&#x2F;-d no data;<br>mysqldump -uroot -pifind@**** –opt –add-drop-table –add-drop-database -B db_name &gt;db_name.sql  &#x2F;&#x2F;struct and data<br>supervisorctl&#x2F;&#x2F;进入supervisorctl控制台<br>supervisorctl restart limits &#x2F;&#x2F;重启limits服务<br>supervisorctl stop limits &#x2F;&#x2F;停止limits服务<br>supervisorctl reread &#x2F;&#x2F;重新加载supervisor配置<br>supervisorctl update limits &#x2F;&#x2F;重新生效limit的启动配置，会重启limits服务</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git常用命令汇总</title>
       <link href="/2022/08/01/gitCommandDesc/"/>
       <url>/2022/08/01/gitCommandDesc/</url>
